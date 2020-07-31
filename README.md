@@ -23,9 +23,9 @@ Solução para extrair informações do site Magazine Luiza
 * Separar camadas: dados (modelos e migrations), services, ferramentas (scripts) e rest api.
 
 * Modelagem de dados:
-  * Criar documentação
-  * Testar viabilidade de usar o [Ming ODM](https://ming.readthedocs.io/en/latest/index.html) com o flask, fazendo binding com o [Flask-Pymongo](https://flask-pymongo.readthedocs.io/en/latest/).
-  * Fallback: [Flask-MongoEngine](http://docs.mongoengine.org/projects/flask-mongoengine/en/latest/)
+  * Utilizar ODM: [Flask-MongoEngine](http://docs.mongoengine.org/projects/flask-mongoengine/en/latest/)
+  * Criar modelos para servir tanto à api quanto ao script de importação
+  * A partir da variável javascript encontrada nas páginas, chamada digitalData, é possível inferir praticamente todos os campos. Verifique o arquivo auxiliar [docs/digital-data.json](docs/digital-data.json), extraído página salva em [docs/sample-item.html](docs/sample-item.html)
 
 * Script de varredura do site magazine luiza
     + Momento da execução:
@@ -34,6 +34,8 @@ Solução para extrair informações do site Magazine Luiza
     + Utilizar [Beautiful soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) para realizar a varredura das páginas
     + Informar o status do mapeamento usando status de retorno do script
     + Erros serão mostrados no console, com sugestão de solução, por exemplo o nome das classes mudou, ou até mesmo uma mudança estrutural na página que requer refatoração do parser desta categoria.
+    + DEMJSON
+      + : demjson.decode("{'name': 'Magazine Luiza', domain: window.location.host}")
 
 * API RESTful feita com [Flask](https://flask.palletsprojects.com/en/1.1.x/), utilizando 
     + Endpoints: 

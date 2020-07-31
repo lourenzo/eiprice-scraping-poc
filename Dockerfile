@@ -1,6 +1,9 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
 
-RUN pip install pipenv
-RUN pipenv install
+RUN pip install --upgrade pip
 
-COPY ./src/eiprice_scraping_poc /app
+COPY ./src/app /app
+COPY ./src/app/requirements.txt /app
+
+WORKDIR /app
+RUN pip install -r requirements.txt
