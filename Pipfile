@@ -8,10 +8,10 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-mongoengine = "*"
-demjson = "*"
 beautifulsoup4 = "*"
 requests = "*"
 python-dotenv = "*"
+hjson = "*"
 
 [requires]
 python_version = "3.8"
