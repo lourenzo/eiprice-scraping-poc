@@ -10,7 +10,7 @@ class ProductOffer(db.Document):
     category = db.StringField()
     subcategory = db.StringField()
     brand = db.StringField()
-    attributes = db.DictField()
+    attributes = db.ListField(db.DictField())
     in_stock = db.BooleanField()
     price = db.DecimalField()
     installments = db.IntField()
