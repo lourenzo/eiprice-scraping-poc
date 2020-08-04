@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_api import FlaskAPI
 
 from .settings import load_settings
 from .models import db
@@ -7,7 +8,7 @@ from .commands import add_custom_commands
 
 ''' Application Factory '''
 def create_app():
-    app = Flask(__name__)
+    app = FlaskAPI(__name__)
 
     load_settings(app)
     db.init_app(app)

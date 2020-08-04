@@ -61,3 +61,30 @@ Solução para extrair informações do site Magazine Luiza
 ```sh
 docker-compose build
 ```
+
+## URLS
+
+### Por EAN
+```
+/product-offers/by/ean/
+```
+Exemplo:
+http://127.0.0.1:8080/product-offers/by/ean/7899882303452
+
+### Por SKU
+```
+/product-offers/by/sku/
+```
+Exemplo:
+http://127.0.0.1:8080/product-offers/by/sku/eh7962327j
+
+### Relatório de ruptura:
+```
+/product-offers/availability
+```
+
+### Relatório de market share
+```
+/product-offers/market-share
+```
+
